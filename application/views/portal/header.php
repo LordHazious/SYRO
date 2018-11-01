@@ -33,120 +33,120 @@
 <!-- Site wrapper -->
 <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="<?=base_url('dashboard');?>" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>S</b>P</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Syro</b>Portal</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="<?=base_url('dashboard');?>" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>S</b>P</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Syro</b>Portal</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="<?=base_url('tickets/create');?>"><i class="fa fa-life-ring" aria-hidden="true"></i> Open a Support Ticket</a>
-          </li>
-          <li>
-            <a href="<?=base_url('logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?=base_url('tickets/create');?>"><i class="fa fa-life-ring" aria-hidden="true"></i> Open a Support Ticket</a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url('logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <!-- =============================================== -->
+    <!-- =============================================== -->
 
-  <!-- Left side column. contains the sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="<?=base_url('assets/own/img/profile.png');?>" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p><?=$full_name;?></p>
-          <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
-        </div>
-      </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li>
-          <a href="<?=base_url('dashboard');?>">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          </a>
-        </li>
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="<?=base_url('assets/own/img/profile.png');?>" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p><?=$full_name;?></p>
+                    <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
+                </div>
+            </div>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
+                <li>
+                    <a href="<?=base_url('dashboard');?>">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cubes"></i> <span>Services</span>
-            <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-cubes"></i> <span>Services</span>
+                        <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#services"><i class="fa fa-circle-o"></i> My Services</a></li>
-            <li><a href="#order"><i class="fa fa-circle-o"></i> Order New Services</a></li>
-          </ul>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#services"><i class="fa fa-circle-o"></i> My Services</a></li>
+                        <li><a href="#order"><i class="fa fa-circle-o"></i> Order New Services</a></li>
+                    </ul>
+                </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-gbp"></i> <span>Billing</span>
-            <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-gbp"></i> <span>Billing</span>
+                        <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#invoices"><i class="fa fa-circle-o"></i> My Invoices</a></li>
-            <li><a href="#quotes"><i class="fa fa-circle-o"></i> My Quotes</a></li>
-            <li><a href="#funds"><i class="fa fa-circle-o"></i> Add Funds</a></li>
-          </ul>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#invoices"><i class="fa fa-circle-o"></i> My Invoices</a></li>
+                        <li><a href="#quotes"><i class="fa fa-circle-o"></i> My Quotes</a></li>
+                        <li><a href="#funds"><i class="fa fa-circle-o"></i> Add Funds</a></li>
+                    </ul>
+                </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-life-ring"></i> <span>Support</span>
-            <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-life-ring"></i> <span>Support</span>
+                        <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?=base_url('tickets');?>"><i class="fa fa-circle-o"></i> My Tickets</a></li>
-            <li><a href="#knowledgebase"><i class="fa fa-circle-o"></i> Knowledgebase</a></li>
-            <li><a href="#downloads"><i class="fa fa-circle-o"></i> Downloads</a></li>
-            <li><a href="#status"><i class="fa fa-circle-o"></i> Network Status</a></li>
-          </ul>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?=base_url('tickets');?>"><i class="fa fa-circle-o"></i> My Tickets</a></li>
+                        <li><a href="#knowledgebase"><i class="fa fa-circle-o"></i> Knowledgebase</a></li>
+                        <li><a href="#downloads"><i class="fa fa-circle-o"></i> Downloads</a></li>
+                        <li><a href="#status"><i class="fa fa-circle-o"></i> Network Status</a></li>
+                    </ul>
+                </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>My Profile</span>
-            <span class="pull-right-container">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-user"></i> <span>My Profile</span>
+                        <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#account"><i class="fa fa-circle-o"></i> Edit Account Details</a></li>
-            <li><a href="#contacts"><i class="fa fa-circle-o"></i> Contacts/Sub-Accounts</a></li>
-            <li><a href="#changepass"><i class="fa fa-circle-o"></i> Change Password</a></li>
-            <li><a href="#emailhistory"><i class="fa fa-circle-o"></i> Email History</a></li>
-          </ul>
-        </li>
-        <?php if($admin == true){
-        echo "
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#account"><i class="fa fa-circle-o"></i> Edit Account Details</a></li>
+                        <li><a href="#contacts"><i class="fa fa-circle-o"></i> Contacts/Sub-Accounts</a></li>
+                        <li><a href="#changepass"><i class="fa fa-circle-o"></i> Change Password</a></li>
+                        <li><a href="#emailhistory"><i class="fa fa-circle-o"></i> Email History</a></li>
+                    </ul>
+                </li>
+                <?php if($admin == true){
+                    echo "
         <li class=\"header\">ADMIN CENTER</li>
         <li>
             <a href=\"".base_url('admin/dashboard')."\">
@@ -154,7 +154,7 @@
             </a>
         </li>
             "; } ?>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>

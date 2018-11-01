@@ -28,12 +28,15 @@ class Portal extends CI_Controller
     public function dashboard()
     {
         $this->load->helper(array('form', 'url'));
+        $this->load->model('Ticket_Model','',TRUE);
 
         $data = array(
             'title' => 'Dashboard',
             'admin' => $this->session->userdata('admin'),
             'full_name' => $this->session->userdata('fullName')
         );
+
+        $data['tickets'] = $this->Ticket_Model->allTickets();
 
         $this->load->view('portal/header', $data);
         $this->load->view('portal/dashboard', $data);

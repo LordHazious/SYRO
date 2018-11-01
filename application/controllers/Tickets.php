@@ -51,9 +51,9 @@ class Tickets extends CI_Controller
             $errors[] = "Ticket id is numeric!";
         }
 
-        if(count($errors) == 0)
-        {
+        if(count($errors) == 0) {
             $data['ticket'] = $this->Ticket_Model->view($tid);
+            $data['ticket_replies'] = $this->Ticket_Model->viewReplies($tid);
         }
         else
         {
@@ -63,6 +63,25 @@ class Tickets extends CI_Controller
         $this->load->view('portal/header', $data);
         $this->load->view('tickets/ticket-view', $data);
         $this->load->view('portal/footer');
+
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('reply', 'Reply', 'trim|required');
+
+        if($this->form_validation->run())
+        {
+            $data = array(
+                'uid' => $this->session->userdata('id'),
+                'tid' => $tid,
+                'reply' => $this->input->post('reply')
+            );
+
+            $result = $this->Ticket_Model->reply($data);
+
+            if($result != false) {
+                redirect('tickets/view/'.$tid);
+            }
+        }
     }
 
     public function create()
@@ -81,8 +100,6 @@ class Tickets extends CI_Controller
         $this->form_validation->set_rules('service', 'Related Service', 'trim|required');
         $this->form_validation->set_rules('department', 'Department', 'trim|required');
         $this->form_validation->set_rules('content', 'Content', 'trim|required');
-
-
 
         if($this->form_validation->run() == FALSE)
         {

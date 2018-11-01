@@ -7,7 +7,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <center><i class="fa fa-life-ring fa-3x" aria-hidden="true"></i></center>
+                        <i class="fa fa-life-ring fa-3x text-center" aria-hidden="true"></i>
                         <hr />
                         <p style="text-align: center; color: #999999; margin-bottom: -15px;">Ticket ID</p>
                         <h3 style="text-align: center;"><?=$ticket->tid;?></h3>
@@ -35,20 +35,22 @@
                     <div class="panel-body"><?=$ticket->description;?></div>
                     <div class="panel-footer"><?php $datetime = new DateTime($ticket->date_created); echo $datetime->format('m/d/Y h:i A'); ?></div>
                 </div>
-                <a href="#" class="btn btn-info btn-block btn-lg" style="margin-bottom: 15px;">Add Reply</a>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p class="posted ticket-title"><strong>{CUSTOMER NAME} </strong> - {DATE} TIME</p>
-                        <p>Customer Reply.</p>
+                <?php echo validation_errors(); ?>
+                <?php echo form_open("Tickets/view/$ticket->tid"); ?>
+                    <div class="form-group">
+                        <label for="reply">Reply</label>
+                        <textarea name="reply" class="form-control" id="reply" rows="5" placeholder="Please write your reply here"></textarea>
                     </div>
-                </div>
-
-                <div class="panel panel-default ticket-admin">
-                    <div class="panel-body">
-                        <p class="posted ticket-title"><strong>{STAFF NAME} (staff)</strong> - {DATE} {TIME}</p>
-                        <p>Admin Reply.</p>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-info btn-block btn-lg" style="margin-bottom: 15px;">Add Reply</button>
+                </form>
+                <?php
+                if($ticket_replies != false){
+                    foreach($ticket_replies as $row) {
+                        $repliedDateTime = new DateTime($row->date_replied);
+                        echo "<div class=\"panel panel-default\"><div class=\"panel-body\"><p class=\"posted ticket-title\"><strong>".$row->uid." ".$repliedDateTime->format('m/d/Y h:i A')."</p><p>".$row->reply."</p></div></div>";
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>

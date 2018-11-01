@@ -54,13 +54,35 @@ class Ticket_Model extends CI_Model
         }
     }
 
-    public function comments()
+    public function reply($data)
     {
-
+        $this->db->insert('ticket_replies', $data);
+        if ($this->db->affected_rows() > 0)
+        {
+            return $this->db->insert_id();;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    public function addComment()
+    public function viewReplies($tid)
     {
+        $this->db->select('tid, uid, reply, date_replied');
+        $this->db->from('ticket_replies');
+        $this->db->where_in('tid', $tid);
+        $this->db->order_by('date_replied', 'asc');
 
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return false;
+        }
     }
 }
